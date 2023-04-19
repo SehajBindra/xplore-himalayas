@@ -43,7 +43,7 @@ function Header() {
   });
 
   return (
-    <header className="flex      items-center space-x-2 justify-center sm:justify-between font-medium px-10 py-5">
+    <header className="flex  max-w-7xl     items-center space-x-2 justify-center sm:justify-between font-medium px-10 py-5">
       <Link href="/">
         <div className="flex items-center space-x-2">
           <img
@@ -52,12 +52,12 @@ function Header() {
             alt="header img "
           />
 
-          <h1 className="text-xl capitalize  line-clamp-1">Puneet Bindra</h1>
+          <h1 className="text-xl  line-clamp-1">Puneet Bindra</h1>
         </div>
       </Link>
 
       <div>
-        <div className="hidden   md:inline-flex space-x-2  ">
+        <div className="hidden pl-20  md:inline-flex space-x-2  ">
           {NavLinks.map((link) => (
             <a
               className="flex flex-row  items-center lg:space-x-4"

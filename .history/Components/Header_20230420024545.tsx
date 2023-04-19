@@ -52,7 +52,7 @@ function Header() {
             alt="header img "
           />
 
-          <h1 className="text-xl capitalize  line-clamp-1">Puneet Bindra</h1>
+          <h1 className="text-xl  line-clamp-1">Puneet Bindra</h1>
         </div>
       </Link>
 
