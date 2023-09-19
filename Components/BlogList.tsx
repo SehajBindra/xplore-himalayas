@@ -28,42 +28,33 @@ function BlogList({ posts }: Props) {
   // console.log(posts);
   return (
     <div>
-      {/* <p className="mb-10 " /> */}
-      <h2 className="text-slate-200 text-4xl text-center my-8">Blogs</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-10 gap-8 gap-y-16 pb-24">
+      {/* Mobile */}
+      <h2 className="text-black text-[20px] md:hidden text-center my-8">
+        {" "}
+        Travel Blogs Around Himachal
+      </h2>
+      <div className="md:hidden ">
         {posts?.map((post) => (
           <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>
-            <div className="flex flex-col group overflow-hidden cursor-pointer">
-              <div className="h-80  relative px-10 my-8   drop-shadow-xl group-hover:scale-105 transition-transform duration-200  ease-out  w-full">
+            <div className="flex space-x-2 px-4 mt-8 items-center">
+              <div className="h-20 flex-shrink-0 rounded-lg relative  my-4    group-hover:scale-105 transition-transform duration-200  ease-out  w-24">
                 <Image
                   className="opacity-80 rounded-md  object-cover  lg:object-center"
                   fill
                   src={urlFor(post.mainImage).url()}
-                  alt={post.author.name}
+                  alt=""
                 />
-
-                {/* <div className="absolute bottom-0">
-                  <div>
-                    <h1 className="text-white line-clamp-1">{post.title}</h1>
-                  </div>
-
-                  <p>
-                    {new Date(post._createdAt).toLocaleDateString("en-US", {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                    })}
-                  </p>
-                </div> */}
               </div>
-              <div className="my-8 flex-1 ">
-                <p className=" my-2 text-slate-200 line-clamp-1 text-lg font-bold">
+              <div className=" ">
+                <p className=" my-2 max-w-sm text-black line-clamp-1 text-[15px] font-bold">
                   {post.title}
                 </p>
-                <p className="line-clamp-2 text-white/75">{post.description}</p>
+                <p className="line-clamp-3 max-w-xs text-justify text-[13px] -tracking-tighter text-black/60">
+                  {post.description}
+                </p>
               </div>
 
-              <div className="mt-2 flex flex-row justify-between items-center">
+              {/* <div className="mt-2 flex flex-col ">
                 <div>
                   {post.categories.map((category) => (
                     <div key={category._id}>
@@ -73,16 +64,109 @@ function BlogList({ posts }: Props) {
                     </div>
                   ))}
                 </div>
-                <div className=" flex flex-row items-center">
-                  <p className="text-white/75  whitespace-nowrap text-[16px]  ">
-                    Read more
-                  </p>
-                  <ArrowUpRightIcon className="h-4 w-4 ml-2" />
-                </div>
+              </div> */}
+            </div>
+            <div className="  justify-between   px-4 flex  items-center">
+              <div className="flex items-center   ">
+                <p className="text-black/60  whitespace-nowrap text-[14px]  ">
+                  Read more
+                </p>
+                <ArrowUpRightIcon className="h-3 w-3 ml-2" />
               </div>
+
+              <p className=" ml-auto text-black/60 text-[14px]">
+                {new Date(post._createdAt).toLocaleDateString("en-US", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </p>
             </div>
           </ClientSideRoute>
         ))}
+      </div>
+
+      {/* DESKTOP */}
+      <div className="lg:py-8 py-4   lg:block  lg:max-w-7xl  mx-auto">
+        <div className="hidden md:text-left text-center lg:justify-between lg:flex-row  items-center lg:flex gap-8">
+          <h1 className="text-[20px] whitespace-nowrap lg:text-[60px] capitalize leading-[5.3rem]">
+            Travel Blogs <br className="hidden lg:inline" /> Around Himachal
+          </h1>
+
+          <div className="max-w-lg">
+            <p className=" max-w-[350px] text-justify text-[14px] -tracking-tight text-black/60 mx-auto md:max-w-md">
+              This Blog features beautiful photographs and personal experiences
+              providing insights into the local culture, history, and traditions
+              and inspiring travel enthusiasts to expore this enchanting
+              desitination.
+            </p>
+
+            <div className="md:inline-flex hidden justify-between md:px-0 px-8 lg:justify-start pt-4 items-center space-x-4">
+              <p className="py-3 px-4 bg-black text-white text-[14px] rounded-lg">
+                Reminder Me
+              </p>
+
+              <p className="py-3 px-4  border text-black text-[14px] rounded-lg">
+                Learn More
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="hidden md:inline-flex gap-6 mt-16">
+          <div className="flex flex-1 flex-col">
+            {posts?.slice(0, 1).map((post) => (
+              <ClientSideRoute
+                key={post._id}
+                route={`/post/${post.slug.current}`}
+              >
+                <img
+                  className="w-full h-[600px] rounded-lg object-cover"
+                  src={urlFor(post.mainImage).url()}
+                  alt=""
+                />
+
+                <div className="mt-4">
+                  <p className="text-black/60 uppercase font-extralight text-lg">
+                    Travel
+                  </p>
+                  <h2 className="text-4xl font-semibold">{post.title}</h2>
+
+                  {/* <p className="text-black/60 mt-3 text-justify max-w-2xl">
+            {post.description}
+          </p> */}
+                </div>
+              </ClientSideRoute>
+            ))}
+          </div>
+
+          <div className="flex flex-col max-w-xs space-y-3 ">
+            {posts?.slice(1, 3).map((post, index) => (
+              <ClientSideRoute
+                key={post._id}
+                route={`/post/${post.slug.current}`}
+              >
+                <img
+                  className="w-[23rem] h-52 rounded-lg object-cover"
+                  src={urlFor(post.mainImage).url()}
+                  alt=""
+                />
+
+                <div className="mt-4">
+                  <p className="text-black/60 uppercase font-extralight text-lg">
+                    Travel
+                  </p>
+                  <h2 className="text-2xl line-clamp-2 font-semibold">
+                    {post.title}
+                  </h2>
+
+                  {/* <p className="text-black/60 mt-3 text-justify max-w-2xl">
+            {post.description}
+          </p> */}
+                </div>
+              </ClientSideRoute>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

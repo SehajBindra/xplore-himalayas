@@ -33,7 +33,7 @@ async function Postpage({ params: { slug } }: Props) {
               <img
                 className=" w-[640px] rounded-md  h-[200px] object-cover  mx-auto lg:object-center"
                 src={urlFor(post.mainImage).url()}
-                alt={post.author.name}
+                alt=""
               />
             </div>
           </div>
@@ -59,7 +59,7 @@ async function Postpage({ params: { slug } }: Props) {
               className="max-w-xs mx-auto -tracking-normal  md:-tracking-tight md:max-w-2xl "
               serializers={{
                 normal: ({ children }: any) => (
-                  <div className="text-base text-white/70 my-5 text-justify -tracking-tight   ">
+                  <div className="text-base text-black/60 my-5 text-justify -tracking-tight   ">
                     {children}
                   </div>
                 ),
@@ -82,7 +82,7 @@ async function Postpage({ params: { slug } }: Props) {
                 ),
 
                 h4: ({ children }: any) => (
-                  <h4 className="text-md py-2 md:text-xl line-clamp-1 font-medium md:py-8  ">
+                  <h4 className="text-md py-2 text-red-600 md:text-xl line-clamp-1 font-medium md:py-8  ">
                     {children}
                   </h4>
                 ),
@@ -94,31 +94,32 @@ async function Postpage({ params: { slug } }: Props) {
                 ),
 
                 bullet: ({ children }: any) => (
-                  <ul className="ml-10 text-white/75 py-5 text-justify list-disc space-y-5">
+                  <ul className="ml-10 text-black/60 py-5 text-justify list-disc space-y-5">
                     {children}
                   </ul>
                 ),
 
                 number: ({ children }: any) => (
-                  <ol className="mt-lg text-white/75 text-justify list-decimal">
+                  <ol className="mt-lg text-black/60 text-justify list-decimal">
                     {children}
                   </ol>
                 ),
                 list: {
                   // Ex. 1: customizing common list types
                   bullet: ({ children }: any) => (
-                    <ul className="ml-10 text-white/75 py-5 text-justify list-disc space-y-5">
+                    <ul className="ml-10 text-black/60 py-5 text-justify list-disc space-y-5">
                       {children}
                     </ul>
                   ),
                   number: ({ children }: any) => (
-                    <ol className="mt-lg">{children}</ol>
+                    <ol className="mt-lg text-black/60">{children}</ol>
                   ),
 
                   // Ex. 2: rendering custom lists
                   checkmarks: ({ children }: any) => (
                     <ol className="mx-auto text-lg">{children}</ol>
                   ),
+                  
                 },
                 // link: ({ children, href }: any) => {
                 //   return (

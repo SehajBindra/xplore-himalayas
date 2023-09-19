@@ -7,7 +7,7 @@ function Logo(props: any) {
     <div className=" flex items-center space-x-2 ">
       <img
         className="h-10 w-10  rounded-full object-cover "
-        src="/p.jpg"
+        src="/xh.jpg"
         alt="logo"
       />
       <>{renderDefault(props)}</>

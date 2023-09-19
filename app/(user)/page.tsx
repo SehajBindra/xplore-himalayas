@@ -7,9 +7,11 @@ import PreviewBlogList from "../../Components/PreviewBlogList";
 import BlogList from "../../Components/BlogList";
 import Header from "../../Components/Header";
 import Banner from "../../Components/Banner";
+import Destinations from "../../Components/Destinations";
 import Projects from "../../Components/Projects";
 import Experiences from "../../Components/Experiences";
 import Footer from "../../Components/Footer";
+import Explore from "../../Components/Explore";
 
 const query = groq`
     *[_type=='post'] {
@@ -65,15 +67,17 @@ export default async function Homepage() {
 
   return (
     <>
-      <Header />
-      <Banner pageInfo={pageInfo} />
-      <section id="projects">
+      {/* <Header /> */}
+      <Banner />
+      <Explore />
+      <Destinations />
+      {/* <section id="projects">
         <Projects projects={projects} />
       </section>
 
       <section id="experience">
         <Experiences Experience={Experience} />
-      </section>
+      </section> */}
 
       <section id="Blogs">
         <BlogList posts={posts} />

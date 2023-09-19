@@ -12,8 +12,8 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 export default defineConfig({
   basePath: "/studio",
-  name: "Puneet_Bindra",
-  title: "Puneet_Singh_Bindra",
+  name: "Xplore_Himalayas",
+  title: "Xplore_Himalayas",
 
   projectId,
   dataset,

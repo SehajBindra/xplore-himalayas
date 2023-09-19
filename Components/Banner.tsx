@@ -1,51 +1,64 @@
-import { ArrowLongDownIcon } from "@heroicons/react/24/solid";
-import { PageInfo } from "../typing";
+import React from "react";
+import Header from "./Header";
 
-type Props = {
-  pageInfo: PageInfo;
-};
-
-function Banner({ pageInfo }: Props) {
+function Banner() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 h-[600px] sm:h-[600px] md:h-[650px] lg:h-[700px] xl:h-[700px]">
-      {/* left col */}
-      <div className="col-span-1 md:col-span-2 my-24">
-        <div className="top-1/2 text-center">
-          <div className="my-[2rem]   max-w-5xl  flex flex-col text-lg">
-            <p className="text-center  xl:text-left text-white/75 xl:ml-14 text-[20px]">
-              Hello, I am{" "}
+    <div>
+      {/* <Header /> */}
+      <div className=" h-[530px] md:h-[700px]">
+        <div className="absolute hidden md:inline inset-0 ">
+          <img
+            className="object-cover absolute opacity-95  w-full h-full"
+            src="/mainImage.jpg"
+            alt="main_image"
+          />
+        </div>
+        <div className="absolute inset-0  md:hidden">
+          <img
+            className="object-cover absolute    w-full h-[600px]"
+            src="/mainImage.jpg"
+            alt="main_image"
+          />
+        </div>
+
+        <div className="relative md:py-20 pt-[64px]   text-center mx-auto  max-w-7xl">
+          <div className="max-w-xl   xl:max-w-5xl   mx-auto">
+            <h1 className="text-2xl text-white font-extrabold opacity-90   sm:text-4xl xl:text-7xl ">
+              Discover the Enchanting <br /> Splendor of the Himalayas!
+            </h1>
+            <p className="mt-8 text-[13px] z-10 md:text-[16px] text-justify -tracking-tighter mx-auto max-w-xs  font-medium   leading-5  text-white/90 lg:max-w-4xl ">
+              Embark on a journey that takes you through breathtaking valleys,
+              where you'll witness panoramic views that seem straight out of a
+              postcard. Traverse winding trails that lead to hidden gems tucked
+              away amidst the mountains.
             </p>
-            <span className="my-2 text-[#ed00eb] md:text-center text-[2rem] sm:text-[3rem] lg:text-4xl xl:my-4 md:text-3xl xl:text-[4rem]">
-              {pageInfo?.name}
-            </span>
-            <span className="my-2 md:my-0 md:mt-1 text-white/75 whitespace-nowrap lg:text-4xl md:text-3xl text-[2rem] text-center xl:text-right xl:mr-12 sm:text-lg xl:my-[1rem]">
-              {pageInfo?.role}
-            </span>
-            <p className="my-4 mx-auto flex-col text-justify -tracking-tight text-white/75 max-w-[20rem]   text-sm md:max-w-xs lg:max-w-sm xl:max-w-2xl">
-              {pageInfo?.backgroundInformation}
-            </p>
-            <div className="flex flex-row items-center justify-center md:justify-start">
-              <div className="my-4  mx-auto  cursor-pointer">
-                <a
-                  href="#projects"
-                  className=" flex flex-row items-center space-x-4 rounded-md border border-transparent bg-[#ed00eb] py-3 px-8 text-center  text-[16px] text-black  cursor-pointer"
-                >
-                  Explore now
-                  <ArrowLongDownIcon className="h-4 w-4  animate-bounce" />
-                </a>
-              </div>
+
+            <div className="flex mx-auto items-center justify-center mt-8 space-x-5   ">
+              <a
+                href="#"
+                title=""
+                className="inline-flex items-center justify-center
+                                                                  px-3
+                            py-3
+                            text-base
+                            
+                            leading-7
+                            
+                            transition-all
+                            duration-200
+                           
+                            border border-transparent
+                            rounded-md
+                            sm:px-6
+                            text-white
+                            bg-black
+                        "
+              >
+                Connect for Your Dream Journey!
+              </a>
             </div>
-            {/* <img className="object-cover w-full md:hidden" src="/wave.svg" /> */}
           </div>
         </div>
-      </div>
-
-      {/* right col */}
-      <div className="col-span-2 sm:flex flex-col items-center space-x-2 hidden md:inline">
-        <img
-          className="hidden md:inline md:h-[521px]  object-cover h-[600px] w-full"
-          src="/final16.png"
-        />
       </div>
     </div>
   );
