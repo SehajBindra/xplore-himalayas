@@ -57,13 +57,13 @@ function Header() {
   NavLinks.forEach((link) => {
     link.className =
       link.href === pathname
-        ? "text-center text-black md:text-white sm:px-3 sm:py-2 text-[14px] sm:text-[16px] font-semibold"
-        : "sm:px-3 text-center sm:py-2 text-[14px] sm:text-[16px] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 text-black/60 md:text-white/60 duration-300  md:hover:text-white hover:text-black";
+        ? `text-center text-black  sm:px-3 sm:py-2 text-[14px] sm:text-[16px] font-semibold`
+        : "sm:px-3 text-center sm:py-2 text-[14px] sm:text-[16px] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 text-black/60 md:text-black/60 duration-300  md:hover:text-black hover:text-black";
   });
 
   return (
     <header className="relative  z-10 mx-auto md:mx-0 md:px-8 xl:px-8 lg:gap-8 xl:gap-32  max-w-xs py-6  md:max-w-5xl lg:max-w-5xl xl:max-w-full h-20  items-center flex">
-      <div className="flex  items-center mx-auto  space-x-4">
+      <Link className="flex  items-center mx-auto  space-x-4" href="/">
         <img
           className="h-14 w-14  rounded-full object-cover"
           src="/xh.jpg"
@@ -74,7 +74,7 @@ function Header() {
         </h2>
 
         <Search />
-      </div>
+      </Link>
 
       <div className=" items-center   capitalize hidden md:inline-flex  space-x-2 cursor-pointer text-[16px] text-white ">
         {NavLinks.map((link) => (
