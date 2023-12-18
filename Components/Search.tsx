@@ -73,7 +73,7 @@ export default function Search() {
           <MagnifyingGlassIcon className="h-6 w-6 object-cover  " />
         </p>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] text-black">
+      <DialogContent className="sm:max-w-[425px] w-full text-black">
         <DialogTitle className="flex w-full  items-center ">
           <MagnifyingGlassIcon className="h-6 w-6 object-cover mr-3 " />
           <Input

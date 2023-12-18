@@ -18,7 +18,7 @@ const NavLinks = [
     id: 1,
     src: `/trips.svg`,
     name: " Trips",
-    href: "#projects",
+    href: "/trips",
     className: "",
   },
 
@@ -43,7 +43,7 @@ const NavLinks = [
 
 function Header() {
   const pathname = usePathname();
-
+  console.log(pathname);
   const { data: session } = useSession();
   // console.log(session);
 
@@ -69,7 +69,11 @@ function Header() {
           src="/xh.jpg"
           alt=""
         />
-        <h2 className="text-white  whitespace-nowrap  text-2xl   lg:text-4xl font-extrabold">
+        <h2
+          className={`${
+            pathname == "/" ? "text-white" : "text-black"
+          } whitespace-nowrap  text-2xl   lg:text-4xl font-extrabold`}
+        >
           Xplore Himalayas
         </h2>
 
